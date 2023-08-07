@@ -1,0 +1,21 @@
+<%- include("partials/header.html") %>
+<div class="box">
+    <div class="list"> 
+        <div class="header-bar">
+            <h2 class="work-heading">Enter Task:</h2>
+        </div>
+        <div class="form-class">
+            <form action="/submit" method="post">
+                <input class="text-input" name=task type="text">
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <% if(locals.task_to_do) { %>
+            <% for(var i=0; i<task_to_do.length; i++) { %>
+                <label class="task task-label"><input class="task check" type="checkbox"><%= task_to_do[i] %></label>
+                <br>
+            <% } %>
+        <% } %>
+    </div>
+</div>
+<%- include("partials/footer.html") %>
